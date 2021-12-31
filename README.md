@@ -10,7 +10,8 @@ Generates meaningful words from dictionary with given no. of letters and words
 ####To run this code
 * Download or Clone this repository.
 * ```$ cd Random-Word-Generator```
-#####Execute
+
+##### Execute
 ```
 $ ./wordgen
 ```
