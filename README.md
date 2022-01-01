@@ -4,6 +4,8 @@ Generates meaningful words from dictionary with given no. of letters and words.
 
 This might be useful for generating short links or to generate recovery keys for Authentication purposes so that people can remember easily.
 
+___
+
 #### Requirements:
 
 * Requests
@@ -14,6 +16,11 @@ This might be useful for generating short links or to generate recovery keys for
 ```
 $ ./wordgen
 ```
+***
+
+ ### Credits: https://word.tips/
+    
+We rely on their webpage and api for generating words
 
 ***
 

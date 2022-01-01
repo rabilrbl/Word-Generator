@@ -22,7 +22,7 @@ def GenerateWordsFromApi(charLength: int, wordLength: int) -> set:
     wordSet = set({})
     # Until wordLength is satisfied
     while len(wordSet) != wordLength:
-        wordSet = set(random.choices(wordList, k=wordLength)) # Keep calling
+        wordSet = set(random.choices(wordList, k=wordLength))  # Keep calling
     return wordSet
 
 
@@ -41,7 +41,8 @@ def GenerateWordsFromUrl(charLength: int, wordLength: int) -> list:
         ('commit', 'Generate Words'),
     ]
     # Create a post request with data
-    response = requests.post('https://word.tips/tools/random-word-generator', data=data, headers={"User-Agent": "Chrome 90.0"}).text
+    response = requests.post('https://word.tips/tools/random-word-generator',
+                             data=data, headers={"User-Agent": "Chrome 90.0"}).text
     # Return a list with no whitespaces in string
     return [data.strip() for data in re.findall(r"(?<=<b>)[\sA-z]+", response)]
 
@@ -55,8 +56,9 @@ def main() -> None:
         result = GenerateWordsFromApi(charLength, wordLength)
     else:
         result = GenerateWordsFromUrl(charLength, wordLength)
-    print("-".join([word.lower() for word in result])) # Making sure all words are lowercase and output string
+    # Making sure all words are lowercase and output string
+    print("-".join([word.lower() for word in result]))
 
 
 if __name__ == "__main__":
-    main() # Run
+    main()  # Run
