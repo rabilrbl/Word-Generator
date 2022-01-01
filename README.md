@@ -1,4 +1,4 @@
-# Random Word Generator
+# Meaningful Word Generator
 
 Generates meaningful words from dictionary with given no. of letters and words.
 
