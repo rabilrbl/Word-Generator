@@ -14,14 +14,14 @@ ___
 
 ##### Execute
 ```
-$ ./wordgen
+$ python3 main.py
 ```
 ***
 
  ### Credits: https://word.tips/
     
-We rely on their webpage and api for generating words
+This program relies on their webpage and API for generating words.
 
 ***
 
-> * Last tested on Python 3.9.7 running on Ubuntu 20.04.3 LTS (Linux)
+_Last tested on Python 3.9.7 running on Ubuntu 20.04.3 LTS (Linux)_
