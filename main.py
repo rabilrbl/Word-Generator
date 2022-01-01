@@ -22,7 +22,7 @@ def GenerateWordsFromApi(charLength: int, wordLength: int) -> set:
     wordSet = set({})
     # Until wordLength is satisfied
     while len(wordSet) != wordLength:
-        wordSet = set(random.choices(wordList, k=wordLength))  # Keep calling
+        wordSet.add(random.choices(wordList, k=wordLength))  # Keep calling
     return wordSet
 
 
@@ -35,7 +35,7 @@ def GenerateWordsFromUrl(charLength: int, wordLength: int) -> list:
         ('word_generator_form[length]', str(charLength)),
         ('word_generator_form[first_letter]', ''),
         ('word_generator_form[last_letter]', ''),
-        ('word_generator_form[word_type][]', 'noun'),
+        ('word_generator_form[word_type][]', ''),
         ('word_generator_form[word_type][]', 'verb'),
         ('word_generator_form[word_type][]', 'adjective'),
         ('commit', 'Generate Words'),
@@ -51,11 +51,13 @@ def main() -> None:
     """Driver Function"""
     charLength = int(input("Enter no. of letters: "))
     wordLength = int(input("Enter no. of words: "))
-    ch = input("1. From API\n2. From WebPage\n\nChoice: ")
-    if ch == 1:
-        result = GenerateWordsFromApi(charLength, wordLength)
-    else:
-        result = GenerateWordsFromUrl(charLength, wordLength)
+
+    # ch = input("1. From API\n2. From WebPage (Recommended)\n\nChoice: ")
+    # if ch == 1:
+    #     result = GenerateWordsFromApi(charLength, wordLength)
+    # else:
+
+    result = GenerateWordsFromUrl(charLength, wordLength)
     # Making sure all words are lowercase and output string
     print("-".join([word.lower() for word in result]))
 
